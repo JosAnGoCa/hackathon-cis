@@ -1,0 +1,20 @@
+<aside class="sidenav">
+  <p>ESCUELAS</p>
+  <mat-divider></mat-divider>
+  <ul class="listado-escuelas">
+    <li class="listado-escuelas__item">
+      <div class="listado-escuelas__item-expansible" [ngClass]="{'listado-escuelas__item-expansible__open': menuToOpen === 'fes-aragon'}" (click)="openMenu('fes-aragon')">
+        <p>FES ARAGON</p> <i class="fa-solid fa-chevron-right" [ngClass]="{'rotate-90': menuToOpen === 'fes-aragon'}"></i>
+      </div>
+      <ul class="listado-carreras" [ngClass]="{'listado-carreras__open': menuToOpen === 'fes-aragon'}">
+        <li *ngFor="let carrera of escuelas.get('fes-aragon')" class="listado-carreras__item"><a [routerLink]="['/fes-aragon/', carrera.id_area]">{{ carrera.nombre }}</a></li>
+      </ul>
+    </li>
+    <mat-divider></mat-divider>
+    <li class="listado-escuelas__item">
+      <div class="listado-escuelas__item-proximamente">
+        <p>PROXIMAMENTE MAS ESCUELAS</p> <i class="fa-solid fa-calendar-xmark"></i>
+      </div>
+    </li>
+  </ul>
+</aside>

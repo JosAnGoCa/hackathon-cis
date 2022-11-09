@@ -1,0 +1,17 @@
+div.elige-escuela-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  height: calc(100vh - 104px);
+  width: 100%;
+
+  p.elige-escuela-texto {
+    font-size: 30px;
+    font-weight: 600;
+    color: #d5d5d5;
+    max-width: 300px;
+    text-align: center;
+    line-height: 40px;
+  }
+}

@@ -1,0 +1,109 @@
+.rotate-90 {
+  rotate: 90deg;
+}
+
+p {
+  margin: 0;
+}
+
+.sidenav {
+  height: calc(100% - 64px);
+  width: 280px;
+  position: fixed;
+  z-index: 1;
+  top: 64px;
+  left: 0;
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  overflow-x: hidden;
+
+  > p {
+    display: inline-block;
+    font-size: 25px;
+    padding: 20px 10px;
+    color: #000;
+    font-weight: 400;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+
+    > li.listado-escuelas__item {
+      padding: 3px;
+
+      div.listado-escuelas__item-expansible {
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #575757;
+        padding: 10px;
+        transition: background-color 0.1s;
+        border-radius: 5px;
+        cursor: pointer;
+
+        i {
+          margin-right: 8px;
+          font-size: 18px;
+          transition: rotate 0.2s;
+        }
+      }
+
+      div.listado-escuelas__item-proximamente {
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #848484;
+        padding: 10px;
+        transition: background-color 0.1s;
+        border-radius: 5px;
+        cursor: pointer;
+
+        i {
+          margin-right: 8px;
+          font-size: 18px;
+          transition: rotate 0.2s;
+        }
+      }
+
+      div.listado-escuelas__item-expansible:hover {
+        color: #000;
+        background: #f1f1f1;
+      }
+
+      div.listado-escuelas__item-expansible__open {
+        color: #000;
+        background: #f5f5f5;
+        margin-bottom: 2px;
+      }
+    }
+
+    ul.listado-carreras {
+      max-height: 0px;
+      overflow: hidden;
+      transition: max-height 0.5s;
+
+      li.listado-carreras__item a {
+        font-size: 15px;
+        margin-left: 20px;
+        text-decoration: none;
+        display: block;
+        color: #575757;
+        padding: 10px;
+        transition: background-color 0.1s;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      li.listado-carreras__item a:hover {
+        color: #000;
+        background: #f1f1f1;
+      }
+    }
+
+    ul.listado-carreras__open {
+      max-height: 1000px;
+    }
+  }
+}
