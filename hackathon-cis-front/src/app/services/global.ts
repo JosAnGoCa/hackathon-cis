@@ -1,3 +1,3 @@
 export var Global = {
-  url: 'http://localhost:8000',
+  url: 'https://hackathon-cis.herokuapp.com',
 };
