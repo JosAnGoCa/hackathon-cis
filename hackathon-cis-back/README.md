@@ -2,7 +2,7 @@
 
 API rest creada para acceder a la base de datos con los horairos de las materias
 
-Para usar la api se la direccion base sera: localhost:8000
+Para usar la api se la direccion base sera: `https://hackathon-cis.herokuapp.com/`
 
 Esta API no requiere autenticacion
 
