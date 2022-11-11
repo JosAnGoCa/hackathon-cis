@@ -7,7 +7,7 @@
         <p>FES ARAGON</p> <i class="fa-solid fa-chevron-right" [ngClass]="{'rotate-90': menuToOpen === 'fes-aragon'}"></i>
       </div>
       <ul class="listado-carreras" [ngClass]="{'listado-carreras__open': menuToOpen === 'fes-aragon'}">
-        <li *ngFor="let carrera of escuelas.get('fes-aragon')" class="listado-carreras__item"><a [routerLink]="['/fes-aragon/', carrera.id_area]">{{ carrera.nombre }}</a></li>
+        <li *ngFor="let carrera of escuelas.get('fes-aragon')" class="listado-carreras__item"><a [routerLink]="['/fes-aragon/', carrera.id_area]" routerLinkActive="activeLink" [innerHtml]="carrera.nombre"></a></li>
       </ul>
     </li>
     <mat-divider></mat-divider>

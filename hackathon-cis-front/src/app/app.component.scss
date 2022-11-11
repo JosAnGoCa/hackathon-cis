@@ -3,5 +3,8 @@
 }
 
 .content-router {
+  margin: 0 auto;
   padding: 20px;
+  min-height: calc(100vh - 104px);
+  max-width: 900px;
 }

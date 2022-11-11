@@ -4,6 +4,12 @@ mat-toolbar.menu {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
+  z-index: 100;
+}
+
+mat-toolbar.menu a {
+  color: #fff;
+  text-decoration: none;
 }
 
 mat-toolbar.menu ul {

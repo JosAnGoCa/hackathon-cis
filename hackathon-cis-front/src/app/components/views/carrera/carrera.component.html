@@ -1,1 +1,102 @@
-<p>carrera works!</p>
+<div class="selector-semestre">
+  <h2 class="mat-headline">ELIGE EL SEMESTRE</h2>
+  <div class="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Semestre</mat-label>
+      <mat-select [(value)]="semestreElegido">
+        <mat-option
+          *ngFor="let semestre of semestres"
+          value="{{ semestre['id_semestre'] }}"
+          >{{ semestre["nombre"] }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <button
+      mat-stroked-button
+      color="warn"
+      (click)="consultlarGrupos()"
+      [disabled]="semestreElegido == ''"
+    >
+      Consultar
+    </button>
+  </div>
+</div>
+
+<div
+  class="horarios-semestre"
+  *ngIf="
+    gruposJson[routeParams['escuela']] != null &&
+    gruposJson[routeParams['escuela']][routeParams['carrera']] != null &&
+    gruposJson[routeParams['escuela']][routeParams['carrera']][
+      semestreElegido
+    ] != null
+  "
+>
+  <h2 class="mat-headline">HORARIOS DEL SEMESTRE</h2>
+
+  <div class="horarios">
+    <table class="tabla-horarios__header">
+      <tr class="tabla-horarios__header-row">
+        <th class="tabla-horarios__header-clave">CVE</th>
+        <th class="tabla-horarios__header-materia">MATERIA</th>
+        <th class="tabla-horarios__header-profesor">PROFESOR</th>
+        <th class="tabla-horarios__header-grupo">GRUPO</th>
+        <th class="tabla-horarios__header-day">LU</th>
+        <th class="tabla-horarios__header-day">MA</th>
+        <th class="tabla-horarios__header-day">MI</th>
+        <th class="tabla-horarios__header-day">JU</th>
+        <th class="tabla-horarios__header-day">VI</th>
+        <th class="tabla-horarios__header-day">SA</th>
+        <th class="tabla-horarios__header-salon">SALON</th>
+        <th class="tabla-horarios__header-cupo">CUPO</th>
+      </tr>
+    </table>
+
+    <div
+      class="horarios-grupo"
+      *ngFor="
+        let grupo of gruposJson[routeParams['escuela']][routeParams['carrera']][
+          semestreElegido
+        ]
+      "
+    >
+      <table class="tabla-horarios__grupo">
+        <tr
+          class="tabla-horarios__grupo-row"
+          *ngFor="let horario of grupo.horarios"
+        >
+          <td
+            class="tabla-horarios__grupo-clave"
+            [innerHtml]="horario.clv_materia"
+          ></td>
+          <td
+            class="tabla-horarios__grupo-materia"
+            [innerHtml]="horario.nomb_cmateria"
+          ></td>
+          <td
+            class="tabla-horarios__grupo-profesor"
+            [innerHtml]="horario.nomb_prof"
+          ></td>
+          <td
+            class="tabla-horarios__grupo-grupo"
+            [innerHtml]="horario.grupo"
+          ></td>
+          <td class="tabla-horarios__grupo-day" [innerHtml]="horario.LU"></td>
+          <td class="tabla-horarios__grupo-day" [innerHtml]="horario.MA"></td>
+          <td class="tabla-horarios__grupo-day" [innerHtml]="horario.MI"></td>
+          <td class="tabla-horarios__grupo-day" [innerHtml]="horario.JU"></td>
+          <td class="tabla-horarios__grupo-day" [innerHtml]="horario.VI"></td>
+          <td class="tabla-horarios__grupo-day" [innerHtml]="horario.SA"></td>
+          <td
+            class="tabla-horarios__grupo-salon"
+            [innerHtml]="horario.clv_salon"
+          ></td>
+          <td
+            class="tabla-horarios__grupo-cupo"
+            [innerHtml]="horario.cupo"
+          ></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+button {
+  margin-left: 30px;
+}
+
+.selector-semestre {
+  margin-top: 10px;
+}
+
+.horarios-semestre {
+  margin-top: 30px;
+}
+
+table {
+  border-spacing: 0;
+}
+
+.horarios-grupo {
+  margin-bottom: 10px;
+}
+
+.tabla-horarios__header {
+  position: sticky;
+  top: 80px;
+  margin-bottom: 20px;
+  height: 35px;
+}
+
+.tabla-horarios__grupo-row {
+  // background: #606fc1;
+  background: #FE4181;
+  height: 45px;
+  color: #fff;
+
+  td {
+    text-align: center;
+  }
+}
+.tabla-horarios__grupo-row:nth-child(2n+1) {
+  // background: #6b7ad3;
+  background: #ff5f94;
+}
+
+.tabla-horarios__header-row {
+  background: #F54236;
+  color: #fff;
+
+  th {
+    font-weight: normal;
+  }
+}
+
+.tabla-horarios__header-day,
+.tabla-horarios__grupo-day,
+.tabla-horarios__header-clave,
+.tabla-horarios__grupo-clave {
+  width: 45px;
+}
+
+.tabla-horarios__header-materia,
+.tabla-horarios__grupo-materia,
+.tabla-horarios__header-profesor,
+.tabla-horarios__grupo-profesor {
+  width: 205px;
+}
+
+.tabla-horarios__header-grupo,
+.tabla-horarios__grupo-grupo  {
+  width: 60px;
+}
+
+.tabla-horarios__header-salon,
+.tabla-horarios__grupo-salon {
+  width: 55px;
+}
+
+.tabla-horarios__header-cupo,
+.tabla-horarios__grupo-cupo {
+  width: 45px;
+}
+

@@ -6,18 +6,14 @@ import { GeneradorComponent } from './components/views/generador/generador.compo
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: ':escuela/:carrera', component: CarreraComponent },
+  { path: ':escuela/:carrera/generador', component: GeneradorComponent },
+
   { path: '**', redirectTo: '' },
-  {
-    path: 'fes-aragon',
-    children: [
-      { path: ':carrera', component: CarreraComponent },
-      { path: ':carrera/generador', component: GeneradorComponent }
-    ],
-  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
